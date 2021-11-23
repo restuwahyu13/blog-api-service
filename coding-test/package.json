@@ -34,7 +34,6 @@
 		"shortid": "^2.2.16"
 	},
 	"devDependencies": {
-		"graphql-playground-middleware-express": "^1.7.23",
 		"nodemon": "^2.0.15"
 	}
 }
