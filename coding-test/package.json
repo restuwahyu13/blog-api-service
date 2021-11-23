@@ -1,0 +1,40 @@
+{
+	"name": "coding-test",
+	"version": "1.0.0",
+	"description": "coding test backend developer",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "restuwahyu13"
+	},
+	"keywords": [
+		"expiress-api"
+	],
+	"author": "restuwahyu13",
+	"license": "MIT",
+	"dependencies": {
+		"@graphql-tools/schema": "^8.3.1",
+		"apollo-server-express": "^3.5.0",
+		"body-parser": "^1.19.0",
+		"compression": "^1.7.4",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"graphql": "^16.0.1",
+		"graphql-middleware": "^6.1.12",
+		"graphql-upload": "^12.0.0",
+		"gtl-node": "0.0.3",
+		"helmet": "^4.6.0",
+		"mongoose": "^6.0.13",
+		"morgan": "^1.10.0",
+		"shortid": "^2.2.16"
+	},
+	"devDependencies": {
+		"graphql-playground-middleware-express": "^1.7.23",
+		"nodemon": "^2.0.15"
+	}
+}

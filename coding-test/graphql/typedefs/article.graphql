@@ -1,0 +1,85 @@
+extend type Query {
+	resultAllArticle(options: OptionsArticle!): MessageQueryArticle!
+	resultArticleById(id: String!): MessageQueryIdArticle!
+}
+
+extend type Mutation {
+	createArticle(input: InputArticle!): MessageMutationArticle!
+	deleteArticle(id: String!): MessageMutationArticle!
+	updateArticle(id: String!, input: InputArticle!): MessageMutationArticle!
+}
+
+## Custom Type Data
+scalar ArticleImage
+scalar ArticleTags
+
+## Input Data Schema
+input InputArticle {
+	title: String!
+	description: String!
+	content: String!
+	category: String!
+	image: ArticleImage!
+	tags: [ArticleTags]!
+}
+
+## Input Options Schema
+input ArticleFilter {
+	category: String!
+}
+
+input OptionsArticle {
+	sort: String
+	filter: ArticleFilter
+	limit: Int!
+	offset: Int!
+}
+
+## Interface Schema Defination
+interface IArticle {
+	_id: String!
+	title: String!
+	description: String!
+	content: String!
+	category: String!
+	image: ArticleImage!
+	tags: [ArticleTags]!
+}
+
+## Article Type Data Schema
+type Article implements IArticle {
+	_id: String!
+	title: String!
+	description: String!
+	content: String!
+	category: String!
+	image: ArticleImage!
+	tags: [ArticleTags]!
+}
+
+## Pagination type data
+type PaginationArticle {
+	total: Int!
+	page: Int!
+	limit: Int!
+	offset: Int!
+	results: [Article]
+}
+
+## Message Article Schema
+type MessageMutationArticle {
+	code: Int!
+	message: String!
+}
+
+type MessageQueryArticle {
+	code: Int!
+	message: String!
+	data: PaginationArticle
+}
+
+type MessageQueryIdArticle {
+	code: Int!
+	message: String!
+	data: Article
+}
