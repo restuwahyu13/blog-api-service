@@ -21,7 +21,7 @@ module.exports = {
 						{ $skip: offset }
 					])
 				} else {
-					getArticles = await article.aggregate([{ $sort: { sort } }, { $limit: limit }, { $skip: offset }])
+					getArticles = await article.aggregate([{ $sort: { createdAt: sort } }, { $limit: limit }, { $skip: offset }])
 				}
 
 				if (!getArticles.length) {
