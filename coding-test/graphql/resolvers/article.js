@@ -16,7 +16,7 @@ module.exports = {
 				if (filter !== '') {
 					getArticles = await article.aggregate([
 						{ $match: { category: filter } },
-						{ $sort: { sort } },
+						{ $sort: { createdAt: sort } },
 						{ $limit: limit },
 						{ $skip: offset }
 					])
